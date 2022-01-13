@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/src/fontawesome-pro-5.0.13/css/all.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="theme-color" content="373737" />
+
+        <title>Nguyen Tran Quoc Anh</title>
+    </head>
+    <body>
+        <div class="main">
+            <!-- Begin: Profile -->
+            <div class="profile normal-button">
+                <div class="avatar-frame pressed-button">
+                    <img
+                        src="/src/img/ava.JPG"
+                        alt=""
+                        class="avatar-frame__img"
+                    />
+                </div>
+                <h1 class="profile__name">Nguyen Tran Quoc Anh</h1>
+                <p class="profile__descriptions">
+                    Developer / Editor / Designer
+                </p>
+                <a
+                    href="./src/file/file.vcf"
+                    class="profile__add-to-contact-btn normal-button"
+                >
+                    <h2>Add to contact</h2>
+                </a>
+            </div>
+            <!-- End: Profile -->
+
+            <!-- Begin: Social -->
+            <div class="social-btns">
+                <a
+                    href="https://www.facebook.com/trananh.prince/"
+                    class="social-btns__facebook normal-button col-forth col"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                    href="https://www.instagram.com/_trananhhh/"
+                    class="social-btns__instagram normal-button col-forth col"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="mailto:_trananhhh@dfoah.com"
+                    class="social-btns__mail normal-button col-forth col"
+                >
+                    <i class="far fa-envelope-open"></i>
+                </a>
+                <a
+                    href="tel:0982202602"
+                    class="social-btns__phone normal-button col-forth col"
+                >
+                    <i class="fa fa-phone"></i>
+                </a>
+            </div>
+            <!-- End: Social -->
+            <!-- Begin: More info -->
+            <div class="more-info">
+                <div class="more-info__banking normal-button col col-half">
+                    <i class="fas fa-credit-card"></i>
+                    <h2 class="banking-heading">Banking<br />Account</h2>
+                </div>
+                <div class="more-info__banking normal-button col col-half">
+                    <i class="fas fa-credit-card"></i>
+                    <h2 class="banking-heading">Banking<br />Account</h2>
+                </div>
+            </div>
+            <div class="banking-info">
+                <div class="banking-info__select">
+                    <select
+                        name="banking-account"
+                        id="banking-account"
+                        class="normal-button col banking-info__list"
+                    >
+                        <option value="tpb">TPBank</option>
+                        <option value="guava">MBBank</option>
+                        <option value="lychee">Momo</option>
+                        <option value="papaya">Viettel Pay</option>
+                    </select>
+                    <!-- </div> -->
+                    <button
+                        onclick="myFunction()"
+                        class="copy-btn col normal-button"
+                    >
+                        <h2>COPY</h2>
+                    </button>
+                </div>
+                <div class="banking-content col pressed-button">
+                    <p class="content">0982202602</p>
+                </div>
+            </div>
+
+            <!-- End: More info -->
+        </div>
+        <script>
+            function myFunction() {
+                navigator.clipboard.writeText('0982202602');
+            }
+        </script>
+    </body>
+</html>
