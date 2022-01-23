@@ -84,10 +84,19 @@ body {
 /* More info  */
 
 .more-info-container {
+    opacity: 1;
+    /* height: 0px !important; */
+    /* margin-top: 0px;
+    margin-bottom: 0px; */
+    visibility: visible;
+    height: 100%;
+    /* transition: all 0.3s ease;
+    animation: opacity 0.1s ease;
+    pointer-events: none; */
     -webkit-transition: height 0.2s ease;
     -o-transition: height 0.2s ease;
-    transition: height 0.2s ease;
     -webkit-animation: opacity 0.5s ease;
+    transition: height 0.2s ease;
     animation: opacity 0.5s ease;
     /* overflow: hidden; */
 }
@@ -106,24 +115,25 @@ body {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
+    transition: all 0.3s ease;
 }
 
 option {
-    text-align: center;
-    text-align: -webkit-center;
+    /* text-align: center;
+    text-align: -webkit-center; */
 }
 
 #banking-info__list {
     margin-bottom: 16px;
     /* padding-left: calc(50% - 62px); */
-    text-align: center;
-    text-align: -webkit-center;
+    /* text-align: center;
+    text-align: -webkit-center; */
+    padding-left: 32px;
     appearance: none;
     font-size: 18px;
     color: var(--dark-highlight-color);
     font-family: var(--primary-font);
     opacity: 1;
-    overflow: hidden;
     visibility: visible;
     transition: all 0.3s ease;
 }

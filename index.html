@@ -84,7 +84,7 @@
                 <button
                     onclick="showDetails('social-btn__mail', 'details-mail')"
                     id="social-btn__mail"
-                    class="social-btns button col-forth col"
+                    class="social-btns button col-forth col has-more"
                 >
                     <i class="fas fa-envelope"></i>
                     <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
@@ -93,7 +93,7 @@
                     href="tel:0982202602"
                     onclick="showDetails('social-btn__phone', 'details-phone')"
                     id="social-btn__phone"
-                    class="social-btns button col-forth col"
+                    class="social-btns button col-forth col has-more"
                 >
                     <i class="fas fa-phone"></i>
                     <!-- <img src="./src/icon/phone.svg" alt="" /> -->
@@ -132,7 +132,7 @@
                 <button
                     onclick="showDetails('more-info__banking', 'banking-info-container')"
                     id="more-info__banking"
-                    class="more-info button col col-half"
+                    class="more-info button col col-half has-more"
                 >
                     <i class="fas fa-credit-card"></i>
                     <h2 class="more-info__heading">Banking<br />Account</h2>
@@ -140,7 +140,7 @@
                 <button
                     onclick="showDetails('more-info__portfolio', 'portfolio-info-container')"
                     id="more-info__portfolio"
-                    class="more-info button col col-half"
+                    class="more-info button col col-half has-more"
                 >
                     <i class="fas fa-cloud"></i>
                     <h2 class="more-info__heading">Portfolio<br />Showreel</h2>
@@ -214,6 +214,9 @@
             </div>
         </div>
         <script>
+            var lastMainTag = null;
+            var lastSubTag = null;
+
             function copyContent(content) {
                 navigator.clipboard.writeText(content);
             }
@@ -221,8 +224,13 @@
                 var mainTag = document.getElementById(mainTagName);
                 var subTag = document.getElementById(subTagName);
                 subTag.classList.toggle('hidden');
-                // subTag.parentElement.classList.toggle('hidden');
                 mainTag.classList.toggle('button--pressed');
+                if (lastMainTag != null && lastMainTag != mainTag) {
+                    lastSubTag.classList.add('hidden');
+                    lastMainTag.classList.remove('button--pressed');
+                }
+                lastMainTag = mainTag;
+                lastSubTag = subTag;
             }
             function showNumber() {
                 var bankingContent = document.getElementById('banking-content');
