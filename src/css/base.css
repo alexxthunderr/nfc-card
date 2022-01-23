@@ -38,6 +38,14 @@
     /* margin: 0px 8px 16px 8px; */
 }
 
+.col-three-fifth {
+    width: calc(60% - 16px);
+}
+
+.col-two-fifth {
+    width: calc(40% - 16px);
+}
+
 .col-forth {
     width: calc(25% - 16px);
 }

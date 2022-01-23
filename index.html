@@ -149,29 +149,32 @@
             <!-- End: More info buttons -->
 
             <!-- Begin: More info details -->
-            <div
-                id="banking-info-container"
-                class="more-info-container hidden row"
-            >
-                <select
-                    onchange="showNumber()"
-                    name="banking-account"
-                    id="banking-info__list"
-                    class="col-full button"
-                    required
-                >
-                    <option value="none" disabled selected>CHOOSE BANK</option>
-                    <option>Momo</option>
-                    <option>MB Bank</option>
-                    <option>TP Bank</option>
-                    <option>ZaloPay</option>
-                    <option>ShopeePay</option>
-                    <option>ViettelPay</option>
-                </select>
+            <div id="banking-info-container" class="more-info-container hidden">
+                <div class="row">
+                    <div id="press-here" class="col col-two-fifth">
+                        <h4>
+                            Choose bank <br />
+                            you want
+                            <i class="fas fa-arrow-right"></i>
+                        </h4>
+                    </div>
+                    <select
+                        name="banking-account"
+                        id="banking-info__list"
+                        class="col col-three-fifth button"
+                        required
+                    >
+                        <!-- <option value="none" disabled selected></option> -->
+                        <option value="0982202602">Momo</option>
+                        <option value="0982202602">MB Bank</option>
+                        <option value="0982202602">TP Bank</option>
+                        <option value="0982202602">ZaloPay</option>
+                        <option value="0982202602">ShopeePay</option>
+                        <option value="0982202602">ViettelPay</option>
+                    </select>
+                </div>
                 <div class="more-details col-full button button--pressed">
-                    <p id="banking-content" class="content hidden">
-                        0982202602
-                    </p>
+                    <p id="banking-content" class="content">0982202602</p>
                     <a
                         onclick="copyContent('0982202602')"
                         class="more-details-btn button"
