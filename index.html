@@ -4,28 +4,49 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./style.css" />
+
+        <link rel="stylesheet" href="./src/css/base.css" />
+        <link rel="stylesheet" href="./src/css/style.css" />
         <link
             rel="stylesheet"
             href="./src/fontawesome-pro-5.0.13/css/all.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
             rel="stylesheet"
         />
         <meta name="theme-color" content="373737" />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
 
         <title>Nguyen Tran Quoc Anh</title>
     </head>
     <body>
-        <div class="main">
+        <div class="main grid">
             <!-- Begin: Profile -->
-            <div class="profile normal-button">
-                <div class="avatar-frame pressed-button">
+            <div class="profile button">
+                <div class="avatar-frame button button--pressed">
                     <img
-                        src="./src/img/ava.JPG"
+                        src="./src/img/ava.png"
                         alt=""
                         class="avatar-frame__img"
                     />
@@ -36,82 +57,176 @@
                 </p>
                 <a
                     href="./src/file/file.vcf"
-                    class="profile__add-to-contact-btn normal-button"
+                    class="profile__add-to-contact-btn button button--highlight"
                 >
                     <h2>Add to contact</h2>
                 </a>
             </div>
             <!-- End: Profile -->
-
             <!-- Begin: Social -->
-            <div class="social-btns">
+            <div class="social-btns-container row">
                 <a
                     href="https://www.facebook.com/trananh.prince/"
-                    class="social-btns__facebook normal-button col-forth col"
+                    id="social-btn__facebook"
+                    class="social-btns button col-forth col"
                 >
+                    <!-- <img src="./src/icon/facebook.svg" alt="" /> -->
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a
                     href="https://www.instagram.com/_trananhhh/"
-                    class="social-btns__instagram normal-button col-forth col"
+                    id="social-btn__instagram"
+                    class="social-btns button col-forth col"
                 >
+                    <!-- <img src="./src/icon/instagram.svg" alt="" /> -->
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a
-                    href="mailto:_trananhhh@dfoah.com"
-                    class="social-btns__mail normal-button col-forth col"
+                <button
+                    onclick="showDetails('social-btn__mail', 'details-mail')"
+                    id="social-btn__mail"
+                    class="social-btns button col-forth col"
                 >
-                    <i class="far fa-envelope-open"></i>
-                </a>
-                <a
+                    <i class="fas fa-envelope"></i>
+                    <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
+                </button>
+                <button
                     href="tel:0982202602"
-                    class="social-btns__phone normal-button col-forth col"
+                    onclick="showDetails('social-btn__phone', 'details-phone')"
+                    id="social-btn__phone"
+                    class="social-btns button col-forth col"
                 >
-                    <i class="fa fa-phone"></i>
-                </a>
+                    <i class="fas fa-phone"></i>
+                    <!-- <img src="./src/icon/phone.svg" alt="" /> -->
+                </button>
             </div>
             <!-- End: Social -->
-            <!-- Begin: More info -->
-            <div class="more-info">
-                <div class="more-info__banking normal-button col col-half">
-                    <i class="fas fa-credit-card"></i>
-                    <h2 class="banking-heading">Banking<br />Account</h2>
-                </div>
-                <div class="more-info__banking normal-button col col-half">
-                    <i class="fas fa-credit-card"></i>
-                    <h2 class="banking-heading">Banking<br />Account</h2>
-                </div>
-            </div>
-            <div class="banking-info">
-                <div class="banking-info__select">
-                    <select
-                        name="banking-account"
-                        id="banking-account"
-                        class="normal-button col banking-info__list"
-                    >
-                        <option value="tpb">TPBank</option>
-                        <option value="guava">MBBank</option>
-                        <option value="lychee">Momo</option>
-                        <option value="papaya">Viettel Pay</option>
-                    </select>
-                    <!-- </div> -->
-                    <button
-                        onclick="myFunction()"
-                        class="copy-btn col normal-button"
-                    >
-                        <h2>COPY</h2>
-                    </button>
-                </div>
-                <div class="banking-content col pressed-button">
-                    <p class="content">0982202602</p>
-                </div>
-            </div>
 
-            <!-- End: More info -->
+            <!-- Begin: Mail & Phone -->
+            <div
+                id="details-mail"
+                class="more-details col-full button button--pressed hidden"
+                onclick="copyContent('trananhhh@dfoah.com')"
+            >
+                <p>trananhhh@dfoah.com</p>
+                <a
+                    href="mailto:_trananhhh@dfoah.com"
+                    class="more-details-btn col button"
+                >
+                    Send
+                </a>
+            </div>
+            <div
+                id="details-phone"
+                class="more-details col-full button button--pressed hidden"
+                onclick="copyContent('0982202602')"
+            >
+                <p>0982202602</p>
+                <a href="tel:0982202602" class="more-details-btn col button">
+                    Call
+                </a>
+            </div>
+            <!-- End: Mail & Phone -->
+
+            <!-- Begin: More info buttons -->
+            <div class="row">
+                <button
+                    onclick="showDetails('more-info__banking', 'banking-info-container')"
+                    id="more-info__banking"
+                    class="more-info button col col-half"
+                >
+                    <i class="fas fa-credit-card"></i>
+                    <h2 class="more-info__heading">Banking<br />Account</h2>
+                </button>
+                <button
+                    onclick="showDetails('more-info__portfolio', 'portfolio-info-container')"
+                    id="more-info__portfolio"
+                    class="more-info button col col-half"
+                >
+                    <i class="fas fa-cloud"></i>
+                    <h2 class="more-info__heading">Portfolio<br />Showreel</h2>
+                </button>
+            </div>
+            <!-- End: More info buttons -->
+
+            <!-- Begin: More info details -->
+            <div
+                id="banking-info-container"
+                class="more-info-container hidden row"
+            >
+                <select
+                    onchange="showNumber()"
+                    name="banking-account"
+                    id="banking-info__list"
+                    class="col-full button"
+                    required
+                >
+                    <option value="none" disabled selected>CHOOSE BANK</option>
+                    <option>Momo</option>
+                    <option>MB Bank</option>
+                    <option>TP Bank</option>
+                    <option>ZaloPay</option>
+                    <option>ShopeePay</option>
+                    <option>ViettelPay</option>
+                </select>
+                <div class="more-details col-full button button--pressed">
+                    <p id="banking-content" class="content hidden">
+                        0982202602
+                    </p>
+                    <a
+                        onclick="copyContent('0982202602')"
+                        class="more-details-btn button"
+                    >
+                        Copy
+                    </a>
+                </div>
+            </div>
+            <div
+                id="portfolio-info-container"
+                class="more-info-container row more-details hidden"
+            >
+                <a
+                    href="https://www.behance.net/_trananhhh"
+                    id="portfolio-btn__behance"
+                    class="social-btns button col-forth col"
+                >
+                    <i class="fab fa-behance"></i>
+                </a>
+                <a
+                    href="https://unsplash.com/@trananhprince"
+                    id="portfolio-btn__unsplash"
+                    class="social-btns button col-forth col"
+                    ><i class="fab fa-unsplash"></i>
+                </a>
+                <a
+                    href="https://github.com/alexxthunderr"
+                    id="portfolio-btn__github"
+                    class="social-btns button col-forth col"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+                <a
+                    href="https://github.com/alexxthunderr"
+                    id="portfolio-btn__linkedin"
+                    class="social-btns button col-forth col"
+                >
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
         </div>
         <script>
-            function myFunction() {
-                navigator.clipboard.writeText('0982202602');
+            function copyContent(content) {
+                navigator.clipboard.writeText(content);
+            }
+            function showDetails(mainTagName, subTagName) {
+                var mainTag = document.getElementById(mainTagName);
+                var subTag = document.getElementById(subTagName);
+                subTag.classList.toggle('hidden');
+                // subTag.parentElement.classList.toggle('hidden');
+                mainTag.classList.toggle('button--pressed');
+            }
+            function showNumber() {
+                var bankingContent = document.getElementById('banking-content');
+                bankingContent.classList.remove('hidden');
             }
         </script>
     </body>
