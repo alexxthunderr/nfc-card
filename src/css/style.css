@@ -12,10 +12,6 @@ body {
     overflow: scroll;
     min-height: 100vh;
 }
-
-.main {
-}
-
 /* Profile */
 .profile {
     cursor: default;
@@ -132,6 +128,8 @@ h4 {
 #banking-info__list {
     margin-bottom: 16px;
     padding-left: 36px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     font-size: 18px;
     font-family: var(--primary-font);
