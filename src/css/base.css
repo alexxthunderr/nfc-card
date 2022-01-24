@@ -7,7 +7,8 @@
     --dark-highlight-color: #6083b7;
     --dark-primary-color: linear-gradient(145deg, #2e2e2e, #373737);
     --text-color-white: rgb(228, 228, 228);
-    --primary-font: 'Rubik', sans-serif;
+    --primary-font: -apple-system, BlinkMacSystemFont, sans-serif;
+    /* --primary-font: 'Rubik', sans-serif; */
 }
 
 .grid {

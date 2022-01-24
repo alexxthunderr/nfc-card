@@ -4,7 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <link
+            rel="icon"
+            href="./src/img/faviconAgency.png"
+            type="image/gif"
+            sizes="16x16"
+        />
         <link rel="stylesheet" href="./src/css/base.css" />
         <link rel="stylesheet" href="./src/css/style.css" />
         <link
@@ -59,7 +64,7 @@
                     href="./src/file/file.vcf"
                     class="profile__add-to-contact-btn button button--highlight"
                 >
-                    <h2>Add to contact</h2>
+                    <h5>Add to contact</h5>
                 </a>
             </div>
             <!-- End: Profile -->
@@ -68,7 +73,7 @@
                 <a
                     href="https://www.facebook.com/trananh.prince/"
                     id="social-btn__facebook"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                 >
                     <!-- <img src="./src/icon/facebook.svg" alt="" /> -->
                     <i class="fab fa-facebook-f"></i>
@@ -76,7 +81,7 @@
                 <a
                     href="https://www.instagram.com/_trananhhh/"
                     id="social-btn__instagram"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                 >
                     <!-- <img src="./src/icon/instagram.svg" alt="" /> -->
                     <i class="fab fa-instagram"></i>
@@ -84,7 +89,7 @@
                 <button
                     onclick="showDetails('social-btn__mail', 'details-mail')"
                     id="social-btn__mail"
-                    class="social-btns button col-forth col has-more"
+                    class="social-btn button col-forth col has-more"
                 >
                     <i class="fas fa-envelope"></i>
                     <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
@@ -93,7 +98,7 @@
                     href="tel:0982202602"
                     onclick="showDetails('social-btn__phone', 'details-phone')"
                     id="social-btn__phone"
-                    class="social-btns button col-forth col has-more"
+                    class="social-btn button col-forth col has-more"
                 >
                     <i class="fas fa-phone"></i>
                     <!-- <img src="./src/icon/phone.svg" alt="" /> -->
@@ -105,9 +110,8 @@
             <div
                 id="details-mail"
                 class="more-details col-full button button--pressed hidden"
-                onclick="copyContent('trananhhh@dfoah.com')"
             >
-                <p>trananhhh@dfoah.com</p>
+                <p onclick="copyContent(this)">trananhhh@dfoah.com</p>
                 <a
                     href="mailto:_trananhhh@dfoah.com"
                     class="more-details-btn col button"
@@ -118,9 +122,8 @@
             <div
                 id="details-phone"
                 class="more-details col-full button button--pressed hidden"
-                onclick="copyContent('0982202602')"
             >
-                <p>0982202602</p>
+                <p onclick="copyContent(this)">0982202602</p>
                 <a href="tel:0982202602" class="more-details-btn col button">
                     Call
                 </a>
@@ -130,7 +133,7 @@
             <!-- Begin: More info buttons -->
             <div class="row">
                 <button
-                    onclick="showDetails('more-info__banking', 'banking-info-container')"
+                    onclick="showDetails('more-info__banking', 'banking-info-container'); showNumber()"
                     id="more-info__banking"
                     class="more-info button col col-half has-more"
                 >
@@ -152,35 +155,36 @@
             <div id="banking-info-container" class="more-info-container hidden">
                 <div class="row">
                     <div id="press-here" class="col col-two-fifth">
-                        <h4>
-                            Choose bank <br />
-                            you want
-                            <i class="fas fa-arrow-right"></i>
-                        </h4>
+                        <span>
+                            <p>Choose</p>
+                            <p>a bank</p>
+                        </span>
+                        <i class="fas fa-arrow-circle-right"></i>
                     </div>
                     <select
                         name="banking-account"
                         id="banking-info__list"
                         class="col col-three-fifth button"
+                        onchange="showNumber()"
                         required
                     >
                         <!-- <option value="none" disabled selected></option> -->
-                        <option value="0982202602">Momo</option>
+                        <option value="0982202602" selected="selected">
+                            Momo
+                        </option>
                         <option value="0982202602">MB Bank</option>
                         <option value="0982202602">TP Bank</option>
-                        <option value="0982202602">ZaloPay</option>
+                        <option value="0982202602">ZaloPa</option>
                         <option value="0982202602">ShopeePay</option>
                         <option value="0982202602">ViettelPay</option>
                     </select>
                 </div>
-                <div class="more-details col-full button button--pressed">
-                    <p id="banking-content" class="content">0982202602</p>
-                    <a
-                        onclick="copyContent('0982202602')"
-                        class="more-details-btn button"
-                    >
-                        Copy
-                    </a>
+                <div
+                    class="more-details col-full button button--pressed"
+                    onclick="copyContent(this.childNodes[1])"
+                >
+                    <p id="banking-content" class="content"></p>
+                    <a class="more-details-btn button"> Copy </a>
                 </div>
             </div>
             <div
@@ -190,27 +194,27 @@
                 <a
                     href="https://www.behance.net/_trananhhh"
                     id="portfolio-btn__behance"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                 >
                     <i class="fab fa-behance"></i>
                 </a>
                 <a
                     href="https://unsplash.com/@trananhprince"
                     id="portfolio-btn__unsplash"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                     ><i class="fab fa-unsplash"></i>
                 </a>
                 <a
                     href="https://github.com/alexxthunderr"
                     id="portfolio-btn__github"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                 >
                     <i class="fab fa-github"></i>
                 </a>
                 <a
                     href="https://github.com/alexxthunderr"
                     id="portfolio-btn__linkedin"
-                    class="social-btns button col-forth col"
+                    class="social-btn button col-forth col"
                 >
                     <i class="fab fa-linkedin-in"></i>
                 </a>
@@ -219,9 +223,19 @@
         <script>
             var lastMainTag = null;
             var lastSubTag = null;
+            var currentBank =
+                document.getElementById('banking-info__list').value;
 
-            function copyContent(content) {
-                navigator.clipboard.writeText(content);
+            function copyContent(target) {
+                var currentValue = target.innerHTML;
+                if (target == null) currentValue = currentBank;
+                console.log(currentValue);
+                navigator.clipboard.writeText(currentValue);
+                target.innerHTML =
+                    '<span style="color: var(--dark-highlight-color)" >Copied!<span>';
+                const delayNotice = setTimeout(() => {
+                    target.innerHTML = currentValue;
+                }, 1500);
             }
             function showDetails(mainTagName, subTagName) {
                 var mainTag = document.getElementById(mainTagName);
@@ -236,8 +250,10 @@
                 lastSubTag = subTag;
             }
             function showNumber() {
+                var bankingItem = document.getElementById('banking-info__list');
                 var bankingContent = document.getElementById('banking-content');
-                bankingContent.classList.remove('hidden');
+                currentBank = bankingContent.innerHTML = bankingItem.value;
+                // console.log(bankingItem.value);
             }
         </script>
     </body>
