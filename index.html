@@ -236,7 +236,6 @@
         <script>
             var changeThemeList =
                 document.getElementsByClassName('theme-change');
-            console.log(changeThemeList);
             if (window.matchMedia('(prefers-color-scheme: light)').matches)
                 for (x of changeThemeList) x.classList.add('light');
             else for (x of changeThemeList) x.classList.remove('light');
@@ -256,16 +255,17 @@
                 document.getElementById('banking-info__list').value;
 
             function copyContent(target) {
+                // console.log(target);
                 var currentValue = target.innerHTML;
                 if (target == null) currentValue = currentBank;
-                console.log(currentValue);
+                // console.log(currentValue);
                 navigator.clipboard.writeText(currentValue);
-                if (matched)
+                if (window.matchMedia('(prefers-color-scheme: light)').matches)
                     target.innerHTML =
-                        '<span class="highlight-text">Copied!<span>';
+                        '<span class="highlight-text light">Copied!<span>';
                 else
                     target.innerHTML =
-                        '<span class="highlight-text theme-change" >Copied!<span>';
+                        '<span class="highlight-text " >Copied!<span>';
                 const delayNotice = setTimeout(() => {
                     target.innerHTML = currentValue;
                 }, 1500);
