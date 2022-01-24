@@ -25,7 +25,18 @@
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
             rel="stylesheet"
         />
-        <meta name="theme-color" content="373737" />
+        <!-- <meta name="theme-color" content="373737" /> -->
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="e0e0e0"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="2e2e2e"
+        />
+
         <script
             type="module"
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -37,12 +48,12 @@
 
         <title>Nguyen Tran Quoc Anh</title>
     </head>
-    <body class="light">
+    <body class="theme-change">
         <div class="main grid">
             <h1 id="theme-status"></h1>
             <!-- Begin: Profile -->
-            <div class="profile button light">
-                <div class="avatar-frame button light button--pressed">
+            <div class="profile button theme-change">
+                <div class="avatar-frame button theme-change button--pressed">
                     <img
                         src="./src/img/ava.png"
                         alt=""
@@ -55,7 +66,7 @@
                 </p>
                 <a
                     href="./src/file/file.vcf"
-                    class="profile__add-to-contact-btn button light button--highlight"
+                    class="profile__add-to-contact-btn button theme-change button--highlight"
                 >
                     <h5>Add to contact</h5>
                 </a>
@@ -66,7 +77,7 @@
                 <a
                     href="https://www.facebook.com/trananh.prince/"
                     id="social-btn__facebook"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                 >
                     <!-- <img src="./src/icon/facebook.svg" alt="" /> -->
                     <i class="fab fa-facebook-f"></i>
@@ -74,7 +85,7 @@
                 <a
                     href="https://www.instagram.com/_trananhhh/"
                     id="social-btn__instagram"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                 >
                     <!-- <img src="./src/icon/instagram.svg" alt="" /> -->
                     <i class="fab fa-instagram"></i>
@@ -82,7 +93,7 @@
                 <button
                     onclick="showDetails('social-btn__mail', 'details-mail')"
                     id="social-btn__mail"
-                    class="social-btn button light col-forth col has-more"
+                    class="social-btn button theme-change col-forth col has-more"
                 >
                     <i class="fas fa-envelope"></i>
                     <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
@@ -91,7 +102,7 @@
                     href="tel:0982202602"
                     onclick="showDetails('social-btn__phone', 'details-phone')"
                     id="social-btn__phone"
-                    class="social-btn button light col-forth col has-more"
+                    class="social-btn button theme-change col-forth col has-more"
                 >
                     <i class="fas fa-phone"></i>
                     <!-- <img src="./src/icon/phone.svg" alt="" /> -->
@@ -102,24 +113,24 @@
             <!-- Begin: Mail & Phone -->
             <div
                 id="details-mail"
-                class="more-details col-full button button--pressed light hidden"
+                class="more-details col-full button button--pressed theme-change hidden"
             >
                 <p onclick="copyContent(this)">trananhhh@dfoah.com</p>
                 <a
                     href="mailto:_trananhhh@dfoah.com"
-                    class="more-details-btn col button light button--highlight"
+                    class="more-details-btn col button theme-change button--highlight"
                 >
                     Send
                 </a>
             </div>
             <div
                 id="details-phone"
-                class="more-details col-full button light button--pressed hidden"
+                class="more-details col-full button theme-change button--pressed hidden"
             >
                 <p onclick="copyContent(this)">0982202602</p>
                 <a
                     href="tel:0982202602"
-                    class="more-details-btn col button light button--highlight"
+                    class="more-details-btn col button theme-change button--highlight"
                 >
                     Call
                 </a>
@@ -131,7 +142,7 @@
                 <button
                     onclick="showDetails('more-info__banking', 'banking-info-container'); showNumber()"
                     id="more-info__banking"
-                    class="more-info button light col col-half has-more"
+                    class="more-info button theme-change col col-half has-more"
                 >
                     <i class="fas fa-credit-card"></i>
                     <h2 class="more-info__heading">Banking<br />Account</h2>
@@ -139,7 +150,7 @@
                 <button
                     onclick="showDetails('more-info__portfolio', 'portfolio-info-container')"
                     id="more-info__portfolio"
-                    class="more-info button light col col-half has-more"
+                    class="more-info button theme-change col col-half has-more"
                 >
                     <i class="fas fa-cloud"></i>
                     <h2 class="more-info__heading">Portfolio<br />Showreel</h2>
@@ -152,7 +163,7 @@
                 <div class="row">
                     <div
                         id="press-here"
-                        class="col col-two-fifth highlight-text light"
+                        class="col col-two-fifth highlight-text theme-change"
                     >
                         <span>
                             <p>Choose</p>
@@ -163,7 +174,7 @@
                     <select
                         name="banking-account"
                         id="banking-info__list"
-                        class="col col-three-fifth button light highlight-text"
+                        class="col col-three-fifth button theme-change highlight-text"
                         onchange="showNumber()"
                         required
                     >
@@ -179,11 +190,13 @@
                     </select>
                 </div>
                 <div
-                    class="more-details col-full button light button--pressed"
+                    class="more-details col-full button theme-change button--pressed"
                     onclick="copyContent(this.childNodes[1])"
                 >
                     <p id="banking-content" class="content"></p>
-                    <a class="more-details-btn button light button--highlight">
+                    <a
+                        class="more-details-btn button theme-change button--highlight"
+                    >
                         Copy
                     </a>
                 </div>
@@ -195,46 +208,53 @@
                 <a
                     href="https://www.behance.net/_trananhhh"
                     id="portfolio-btn__behance"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                 >
                     <i class="fab fa-behance"></i>
                 </a>
                 <a
                     href="https://unsplash.com/@trananhprince"
                     id="portfolio-btn__unsplash"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                     ><i class="fab fa-unsplash"></i>
                 </a>
                 <a
                     href="https://github.com/trananhhh"
                     id="portfolio-btn__github"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                 >
                     <i class="fab fa-github"></i>
                 </a>
                 <a
                     href="https://github.com/alexxthunderr"
                     id="portfolio-btn__linkedin"
-                    class="social-btn button light col-forth col"
+                    class="social-btn button theme-change col-forth col"
                 >
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
         </div>
         <script>
+            var changeThemeList =
+                document.getElementsByClassName('theme-change');
+            console.log(changeThemeList);
+            if (window.matchMedia('(prefers-color-scheme: light)').matches)
+                for (x of changeThemeList) x.classList.add('light');
+            else for (x of changeThemeList) x.classList.remove('light');
+            window
+                .matchMedia('(prefers-color-scheme: dark)')
+                .addEventListener('change', (event) => {
+                    if (
+                        window.matchMedia('(prefers-color-scheme: light)')
+                            .matches
+                    )
+                        for (x of changeThemeList) x.classList.add('light');
+                    else for (x of changeThemeList) x.classList.remove('light');
+                });
             var lastMainTag = null;
             var lastSubTag = null;
             var currentBank =
                 document.getElementById('banking-info__list').value;
-            let matched = window.matchMedia(
-                '(prefers-color-scheme: dark)'
-            ).matches;
-
-            if (matched) {
-                var changeThemeList = document.getElementsByClassName('light');
-                while (changeThemeList.length > 0)
-                    changeThemeList[0].classList.remove('light');
-            }
 
             function copyContent(target) {
                 var currentValue = target.innerHTML;
@@ -246,7 +266,7 @@
                         '<span class="highlight-text">Copied!<span>';
                 else
                     target.innerHTML =
-                        '<span class="highlight-text light" >Copied!<span>';
+                        '<span class="highlight-text theme-change" >Copied!<span>';
                 const delayNotice = setTimeout(() => {
                     target.innerHTML = currentValue;
                 }, 1500);
