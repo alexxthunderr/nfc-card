@@ -12,14 +12,6 @@
         />
         <link rel="stylesheet" href="./src/css/base.css" />
         <link rel="stylesheet" href="./src/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="./src/fontawesome-pro-5.0.13/css/all.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -45,11 +37,12 @@
 
         <title>Nguyen Tran Quoc Anh</title>
     </head>
-    <body>
+    <body class="light">
         <div class="main grid">
+            <h1 id="theme-status"></h1>
             <!-- Begin: Profile -->
-            <div class="profile button">
-                <div class="avatar-frame button button--pressed">
+            <div class="profile button light">
+                <div class="avatar-frame button light button--pressed">
                     <img
                         src="./src/img/ava.png"
                         alt=""
@@ -62,7 +55,7 @@
                 </p>
                 <a
                     href="./src/file/file.vcf"
-                    class="profile__add-to-contact-btn button button--highlight"
+                    class="profile__add-to-contact-btn button light button--highlight"
                 >
                     <h5>Add to contact</h5>
                 </a>
@@ -73,7 +66,7 @@
                 <a
                     href="https://www.facebook.com/trananh.prince/"
                     id="social-btn__facebook"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                 >
                     <!-- <img src="./src/icon/facebook.svg" alt="" /> -->
                     <i class="fab fa-facebook-f"></i>
@@ -81,7 +74,7 @@
                 <a
                     href="https://www.instagram.com/_trananhhh/"
                     id="social-btn__instagram"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                 >
                     <!-- <img src="./src/icon/instagram.svg" alt="" /> -->
                     <i class="fab fa-instagram"></i>
@@ -89,7 +82,7 @@
                 <button
                     onclick="showDetails('social-btn__mail', 'details-mail')"
                     id="social-btn__mail"
-                    class="social-btn button col-forth col has-more"
+                    class="social-btn button light col-forth col has-more"
                 >
                     <i class="fas fa-envelope"></i>
                     <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
@@ -98,7 +91,7 @@
                     href="tel:0982202602"
                     onclick="showDetails('social-btn__phone', 'details-phone')"
                     id="social-btn__phone"
-                    class="social-btn button col-forth col has-more"
+                    class="social-btn button light col-forth col has-more"
                 >
                     <i class="fas fa-phone"></i>
                     <!-- <img src="./src/icon/phone.svg" alt="" /> -->
@@ -109,22 +102,25 @@
             <!-- Begin: Mail & Phone -->
             <div
                 id="details-mail"
-                class="more-details col-full button button--pressed hidden"
+                class="more-details col-full button button--pressed light hidden"
             >
                 <p onclick="copyContent(this)">trananhhh@dfoah.com</p>
                 <a
                     href="mailto:_trananhhh@dfoah.com"
-                    class="more-details-btn col button"
+                    class="more-details-btn col button light button--highlight"
                 >
                     Send
                 </a>
             </div>
             <div
                 id="details-phone"
-                class="more-details col-full button button--pressed hidden"
+                class="more-details col-full button light button--pressed hidden"
             >
                 <p onclick="copyContent(this)">0982202602</p>
-                <a href="tel:0982202602" class="more-details-btn col button">
+                <a
+                    href="tel:0982202602"
+                    class="more-details-btn col button light button--highlight"
+                >
                     Call
                 </a>
             </div>
@@ -135,7 +131,7 @@
                 <button
                     onclick="showDetails('more-info__banking', 'banking-info-container'); showNumber()"
                     id="more-info__banking"
-                    class="more-info button col col-half has-more"
+                    class="more-info button light col col-half has-more"
                 >
                     <i class="fas fa-credit-card"></i>
                     <h2 class="more-info__heading">Banking<br />Account</h2>
@@ -143,7 +139,7 @@
                 <button
                     onclick="showDetails('more-info__portfolio', 'portfolio-info-container')"
                     id="more-info__portfolio"
-                    class="more-info button col col-half has-more"
+                    class="more-info button light col col-half has-more"
                 >
                     <i class="fas fa-cloud"></i>
                     <h2 class="more-info__heading">Portfolio<br />Showreel</h2>
@@ -154,7 +150,10 @@
             <!-- Begin: More info details -->
             <div id="banking-info-container" class="more-info-container hidden">
                 <div class="row">
-                    <div id="press-here" class="col col-two-fifth">
+                    <div
+                        id="press-here"
+                        class="col col-two-fifth highlight-text light"
+                    >
                         <span>
                             <p>Choose</p>
                             <p>a bank</p>
@@ -164,7 +163,7 @@
                     <select
                         name="banking-account"
                         id="banking-info__list"
-                        class="col col-three-fifth button"
+                        class="col col-three-fifth button light highlight-text"
                         onchange="showNumber()"
                         required
                     >
@@ -174,17 +173,19 @@
                         </option>
                         <option value="0982202602">MB Bank</option>
                         <option value="0982202602">TP Bank</option>
-                        <option value="0982202602">ZaloPa</option>
+                        <option value="0982202602">ZaloPay</option>
                         <option value="0982202602">ShopeePay</option>
                         <option value="0982202602">ViettelPay</option>
                     </select>
                 </div>
                 <div
-                    class="more-details col-full button button--pressed"
+                    class="more-details col-full button light button--pressed"
                     onclick="copyContent(this.childNodes[1])"
                 >
                     <p id="banking-content" class="content"></p>
-                    <a class="more-details-btn button"> Copy </a>
+                    <a class="more-details-btn button light button--highlight">
+                        Copy
+                    </a>
                 </div>
             </div>
             <div
@@ -194,27 +195,27 @@
                 <a
                     href="https://www.behance.net/_trananhhh"
                     id="portfolio-btn__behance"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                 >
                     <i class="fab fa-behance"></i>
                 </a>
                 <a
                     href="https://unsplash.com/@trananhprince"
                     id="portfolio-btn__unsplash"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                     ><i class="fab fa-unsplash"></i>
                 </a>
                 <a
-                    href="https://github.com/alexxthunderr"
+                    href="https://github.com/trananhhh"
                     id="portfolio-btn__github"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                 >
                     <i class="fab fa-github"></i>
                 </a>
                 <a
                     href="https://github.com/alexxthunderr"
                     id="portfolio-btn__linkedin"
-                    class="social-btn button col-forth col"
+                    class="social-btn button light col-forth col"
                 >
                     <i class="fab fa-linkedin-in"></i>
                 </a>
@@ -225,14 +226,27 @@
             var lastSubTag = null;
             var currentBank =
                 document.getElementById('banking-info__list').value;
+            let matched = window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ).matches;
+
+            if (matched) {
+                var changeThemeList = document.getElementsByClassName('light');
+                while (changeThemeList.length > 0)
+                    changeThemeList[0].classList.remove('light');
+            }
 
             function copyContent(target) {
                 var currentValue = target.innerHTML;
                 if (target == null) currentValue = currentBank;
                 console.log(currentValue);
                 navigator.clipboard.writeText(currentValue);
-                target.innerHTML =
-                    '<span style="color: var(--dark-highlight-color)" >Copied!<span>';
+                if (matched)
+                    target.innerHTML =
+                        '<span class="highlight-text">Copied!<span>';
+                else
+                    target.innerHTML =
+                        '<span class="highlight-text light" >Copied!<span>';
                 const delayNotice = setTimeout(() => {
                     target.innerHTML = currentValue;
                 }, 1500);
