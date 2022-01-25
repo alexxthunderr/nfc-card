@@ -1,17 +1,4 @@
-a {
-    color: white;
-    text-decoration: none;
-}
-body {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    font-family: var(--primary-font);
-    color: var(--text-color-white);
-    background: var(--dark-primary-color);
-    overflow: scroll;
-    min-height: 100vh;
-}
+
 /* Profile */
 .profile {
     cursor: default;

@@ -96,16 +96,13 @@
                     class="social-btn button theme-change col-forth col has-more"
                 >
                     <i class="fas fa-envelope"></i>
-                    <!-- <img src="./src/icon/envelop.svg" alt="" /> -->
                 </button>
                 <button
-                    href="tel:0982202602"
                     onclick="showDetails('social-btn__phone', 'details-phone')"
                     id="social-btn__phone"
                     class="social-btn button theme-change col-forth col has-more"
                 >
                     <i class="fas fa-phone"></i>
-                    <!-- <img src="./src/icon/phone.svg" alt="" /> -->
                 </button>
             </div>
             <!-- End: Social -->
@@ -255,10 +252,8 @@
                 document.getElementById('banking-info__list').value;
 
             function copyContent(target) {
-                // console.log(target);
                 var currentValue = target.innerHTML;
                 if (target == null) currentValue = currentBank;
-                // console.log(currentValue);
                 navigator.clipboard.writeText(currentValue);
                 if (window.matchMedia('(prefers-color-scheme: light)').matches)
                     target.innerHTML =
@@ -286,7 +281,6 @@
                 var bankingItem = document.getElementById('banking-info__list');
                 var bankingContent = document.getElementById('banking-content');
                 currentBank = bankingContent.innerHTML = bankingItem.value;
-                // console.log(bankingItem.value);
             }
         </script>
     </body>
