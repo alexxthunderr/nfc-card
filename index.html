@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
@@ -25,7 +26,6 @@
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
             rel="stylesheet"
         />
-        <!-- <meta name="theme-color" content="373737" /> -->
         <meta
             name="theme-color"
             media="(prefers-color-scheme: light)"
@@ -50,7 +50,6 @@
     </head>
     <body class="theme-change">
         <div class="main grid">
-            <h1 id="theme-status"></h1>
             <!-- Begin: Profile -->
             <div class="profile button theme-change">
                 <div class="avatar-frame button theme-change button--pressed">
@@ -75,16 +74,16 @@
             <!-- Begin: Social -->
             <div class="social-btns-container row">
                 <a
-                    href="https://www.facebook.com/trananh.prince/"
                     id="social-btn__facebook"
+                    href="https://www.facebook.com/trananh.prince/"
                     class="social-btn button theme-change col-forth col"
                 >
                     <!-- <img src="./src/icon/facebook.svg" alt="" /> -->
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a
-                    href="https://www.instagram.com/_trananhhh/"
                     id="social-btn__instagram"
+                    href="https://www.instagram.com/_trananhhh/"
                     class="social-btn button theme-change col-forth col"
                 >
                     <!-- <img src="./src/icon/instagram.svg" alt="" /> -->
@@ -113,8 +112,8 @@
                 class="more-details col-full button button--pressed theme-change hidden"
             >
                 <p onclick="copyContent(this)">trananhhh@dfoah.com</p>
+                href="mailto:_trananhhh@dfoah.com"
                 <a
-                    href="mailto:_trananhhh@dfoah.com"
                     class="more-details-btn col button theme-change button--highlight"
                 >
                     Send
@@ -122,12 +121,12 @@
             </div>
             <div
                 id="details-phone"
-                class="more-details col-full button theme-change button--pressed hidden"
+                class="more-details col-full button button--pressed theme-change hidden"
             >
                 <p onclick="copyContent(this)">0982202602</p>
                 <a
-                    href="tel:0982202602"
                     class="more-details-btn col button theme-change button--highlight"
+                    href="tel:0982202602"
                 >
                     Call
                 </a>
@@ -183,6 +182,7 @@
                         <option value="0982202602">ZaloPay</option>
                         <option value="0982202602">ShopeePay</option>
                         <option value="0982202602">ViettelPay</option>
+                        <option value="105869051132">VietinBank</option>
                     </select>
                 </div>
                 <div
@@ -252,8 +252,9 @@
                 document.getElementById('banking-info__list').value;
 
             function copyContent(target) {
-                var currentValue = target.innerHTML;
+                var currentValue;
                 if (target == null) currentValue = currentBank;
+                else currentValue = target.innerHTML;
                 navigator.clipboard.writeText(currentValue);
                 if (window.matchMedia('(prefers-color-scheme: light)').matches)
                     target.innerHTML =
